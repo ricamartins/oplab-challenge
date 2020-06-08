@@ -4,7 +4,8 @@
   "description": "Hi! If you wanna work with us, you gotta solve this first. Let's see what you've got!",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "repository": {
     "type": "git",

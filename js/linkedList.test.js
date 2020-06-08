@@ -127,3 +127,94 @@ test('returns -1 (no values found)', function () {
 
     expect(list.indexOf(10, 'all')).toEqual(-1)
 })
+
+test('removes first appearance of a value from list', function () {
+    let mockList = {head: {value: 2, next: {value: 7, next: {value: 5, next: {value: 4, next: null}}}}, size: 4}
+    
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+    list.remove(7);
+
+    expect(list).toEqual(mockList)
+})
+
+test('removes all appearances of a value from list', function () {
+    let mockList = {head: {value: 2, next: {value: 5, next: {value: 4, next: null}}}, size: 3}
+    
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(7, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.remove(7, 'all');
+
+    expect(list).toEqual(mockList)
+})
+
+test('removes all appearances of a value from list', function () {
+    let mockList = {head: {value: 2, next: {value: 5, next: {value: 4, next: null}}}, size: 3}
+    
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+    list.remove(7, 'all');
+
+    expect(list).toEqual(mockList)
+})
+
+test('removes all appearances of a value from list', function () {
+    let mockList = {head: {value: 2, next: {value: 5, next: null}}, size: 2}
+    
+    let list = new LinkedList();
+    list.insert(7, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+    list.remove(7, 'all');
+
+    expect(list).toEqual(mockList)
+})
+
+test('returns (no value to remove)', function () {
+    let list = new LinkedList();
+    list.insert(7, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+    list.remove(7, 'all');
+
+    expect(list.remove(10)).toEqual(undefined)
+})
+
+test('returns (no value to remove)', function () {
+    let list = new LinkedList();
+    list.insert(7, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+    list.remove(7, 'all');
+
+    expect(list.remove(10, 'all')).toEqual(undefined)
+})
+
+test('logs a string with the list values in the console and returns the string', function () {
+    let list = new LinkedList();
+    list.insert(7, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+
+    expect(list.print()).toEqual('[7, 2, 7, 5, 7]')
+})

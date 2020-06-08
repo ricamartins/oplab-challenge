@@ -72,3 +72,58 @@ test('tries to insert node at invalid index', function () {
     list.insert(4, 0);
     expect(list.insert(3, -1)).toEqual(false)
 })
+
+test('returns the index of a value', function () {
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(3, 0);
+    list.insert(2, 0);
+    list.insert(7, 2);
+
+    expect(list.indexOf(7)).toEqual(2)
+})
+
+test('returns the index of the first appearance of a value', function () {
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 0);
+
+    expect(list.indexOf(7)).toEqual(0)
+})
+
+test('returns the indexes of all appearances of a value', function () {
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(7, 0);
+    list.insert(2, 0);
+    list.insert(7, 2);
+
+    expect(list.indexOf(7, 'all')).toEqual([1, 2])
+})
+
+test('returns -1 (no values found)', function () {
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(3, 0);
+    list.insert(2, 0);
+    list.insert(7, 2);
+
+    expect(list.indexOf(10, 'all')).toEqual(-1)
+})
+
+test('returns -1 (no values found)', function () {
+    let list = new LinkedList();
+    list.insert(4, 0);
+    list.insert(5, 0);
+    list.insert(3, 0);
+    list.insert(2, 0);
+    list.insert(7, 2);
+
+    expect(list.indexOf(10, 'all')).toEqual(-1)
+})

@@ -1,0 +1,23 @@
+{
+  "name": "oplab-challenge",
+  "version": "1.0.0",
+  "description": "Hi! If you wanna work with us, you gotta solve this first. Let's see what you've got!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricamartins/oplab-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricamartins/oplab-challenge/issues"
+  },
+  "homepage": "https://github.com/ricamartins/oplab-challenge#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

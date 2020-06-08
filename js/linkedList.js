@@ -43,6 +43,43 @@ class LinkedList {
             this.size++;
         }
     }
+
+    indexOf (value, all=false) {
+        
+        let current = this.head;
+        let index = 0;
+
+        if (all == 'all') {
+
+            let indexes = [];
+
+            while (current) {
+                if (current.value == value) {
+                    indexes.push(index);
+                }
+                current = current.next;
+                index++;
+            }
+
+            if (indexes.length == 0) {
+                return -1
+            } else {
+                return indexes;
+            }
+            
+        } else {
+
+            while (current) {
+                if (current.value == value) {
+                    return index; 
+                }
+                current = current.next;
+                index++;
+            }
+
+            return -1;
+        }
+    }
 }
 
 module.exports = {LinkedList, ListNode}
